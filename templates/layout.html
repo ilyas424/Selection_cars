@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>SelectionCars</title>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">SelectionCars</a>
+      </nav>
+      <nav class="navbar navbar-dark bg-dark" color:#fff>
+        <tr color: #fff>
+          <td><a href="/employees" style="color: white">Сотрудники</a></td>
+          <td><a href="/orders" style="color: white">Заказы</a></td>
+          <td><a href="/inventory" style="color: white">Инвентаризация</a></td>
+          <td><a href="/client" style="color: white">Клиент</a></td>
+          <td><a href="/" style="color: white">Услуги</a></td>
+          <td><a href="/job" style="color: white">Должность</a></td>
+          <td><a href="/schedule" style="color: white">График работы</a></td>
+        </tr>
+      </nav>
+
+      <div class="container pt-4">
+        {% block body %}
+        {% endblock %}
+      </div>
+      <script>
+        $(document).ready(function() {
+            $('#example').DataTable({     
+               "aLengthMenu": [[3, 5, 10, 25, -1], [3, 5, 10, 25, "All"]],
+                  "iDisplayLength": 3
+                } 
+              );
+        }  );
+  
+      </script>
+   </body>
+</html>

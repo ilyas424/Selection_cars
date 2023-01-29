@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block body %}
+   <div class="row">
+    <div class="col-md-4 offset-md-4">
+        <div class="card card-body">
+          <form action="/update5/{{orders.order_id}}" method="POST">
+            <div class="form-group">
+              <input type="text" name="date" value="{{orders.date}}" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <select class="form-control" name="employees_id" placeholder="employees_id"  value="{{orders.employees_id}}"  >
+                      {% for opt in list_options %}
+                        <option value="{{ opt[0] }}">{{ opt[0] }}</option>
+                      {% endfor %}
+                </select>
+              </div>
+              <div class="form-group">
+                <select class="form-control" name="client_id" placeholder="client_id" value="{{orders.client_id}}" >
+                    {% for opt in list_options1 %}
+                      <option value="{{ opt[0] }}">{{opt[0]}}</option>
+                    {% endfor %}
+              </select>
+              </div>
+              <div class="form-group">
+                <select class="form-control" name="service_id" value="{{orders.service_id}}"  >
+                    {% for opt in list_options2 %}
+                      <option value="{{ opt[0] }}">{{opt[0]}}</option>
+                    {% endfor %}
+              </select>
+              </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary btn-block">
+                Обновить
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+   </div>
+{% endblock %}
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block body %}
+   <div class="row">
+    <div class="col-md-4 offset-md-4">
+        <div class="card card-body">
+            <form action="/update6/{{employees.employees_id}}" method="POST">
+                <div class="form-group">
+                  <input type="text" name="first_name" value="{{employees.first_name}}" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="last_name" value="{{employees.last_name}}" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" name="salary" value="{{employees.salary}}" class="form-control" required>
+                  </div>
+                  <div class="form-group">
+                    <select class="form-control" name="job_id" placeholder="job_id" value="{{employees.job_id}}" >
+                        {% for opt in list_options5 %}
+                          <option value="{{ opt[0] }}">{{opt[0]}}</option>
+                        {% endfor %}
+                  </select>
+                  </div>
+                  <div class="form-group">
+                    <select class="form-control" name="schedule_id" value="{{employees.schedule_id}}"  >
+                        {% for opt in list_options6 %}
+                          <option value="{{ opt[0] }}">{{opt[0]}}</option>
+                        {% endfor %}
+                  </select>
+                  </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block">
+                    Обновить
+                  </button>
+                </div>
+              </form>
+        </div>
+      </div>
+   </div>
+{% endblock %}
